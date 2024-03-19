@@ -1,6 +1,5 @@
 # <span style="color:red">Plan du cours
 
-
 ### <span style="color:blue">Module 1: Introduction au Développement Web
 
 1.1. Historique du développement web dynamique  
@@ -35,16 +34,16 @@
 
 ### <span style="color:blue">Module 6: Projet Pratique
 
-- Application de Gestion des Employés 
+- Application de Gestion des Employés
 
 ### <span style="color:blue">Module 7: Introduction aux Concepts Avancés
 
-- Intégration de bibliothèques externes (Composer)  
-- Présentation des principes de l'architecture MVC  
-
-
-### <span style="color:blue">Module 8: POO &  MVC
-
-- Interfaces, traits, héritage
+- POO(Interfaces, traits, héritage)
 - Autoloaders, espaces de noms (namespaces)
+- Intégration de bibliothèques externes (Composer)
+- Présentation des principes de l'architecture MVC
+
+### <span style="color:blue">Module 8: Application des Concepts Avancés
+
 - Recoder le Projet Pratique en POO en utilisant l'architecture MVC
+- Générer un PDF avec DomPdf (Composer)
