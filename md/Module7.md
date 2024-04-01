@@ -487,7 +487,69 @@ $customer = new Customer('Bob');
 echo $customer->getName();
 ```
 
+### <span style="color:blue"> COMPOSER
+
+**Composer est un gestionnaire de dépendances pour PHP. Il permet d’installer et de gérer les bibliothèques et packages dans un projet.**
+
+#### Installation de Composer:
+
+Pour installer composer visiter le site: https://getcomposer.org/
+
+Package disponible: https://packagist.org/
+
+#### Fichier composer.json:
+
+Le fichier composer.json décrit les dépendances de ton projet.
+
+**Initialiser un projet avec composer**
+
+```shell
+composer init
+```
+
+#### Exercice d'app
+
+**fakerphp ou phpunit**
+
+1. Initialiser un projet avec composer
+2. Installer le module `"phpunit/phpunit"` avec la commande suivante:
+   `composer require --dev phpunit/phpunit`
+
+3. Crée un fichier MyClass.php dans un répertoire `src/`
+
+```php
+<?php
+// src/MyClass.php
+class MyClass {
+    public function add($a, $b) {
+        return $a + $b;
+    }
+}
+```
+
+4. Crée un fichier MyClassTest.php dans un répertoire `tests/`
+
+```php
+<?php
+// tests/MyClassTest.php
+use PHPUnit\Framework\TestCase;
+
+class MyClassTest extends TestCase {
+    public function testAdd() {
+        $myClass = new MyClass();
+        $result = $myClass->add(2, 3);
+        $this->assertEquals(5, $result);
+    }
+}
+```
+
+5. Lance les tests avec la commande :
+
+`./vendor/bin/phpunit chemain_vers_le_ficher_de_test`
+
 ### <span style="color:blue"> TP AUTOLOADING
+
+**L’autoloading PSR-4 est un moyen efficace de charger automatiquement les classes dans vos projets PHP. Voici un résumé des étapes pour utiliser l’autoloading PSR-4 avec Composer**
 
 ## <span style="color:yellow"> MVC
 

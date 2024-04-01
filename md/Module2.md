@@ -393,7 +393,7 @@ Comme l' instruction break , continue accepte également un nombre facultatif qu
 
 **Pour accéder à un élément d'un tableau, vous spécifiez l'index de l'élément entre crochets.**
 
-**Pour ajouter un élément à un tableau, vous utilisez la syntaxe suivante : `$array_name[] = new_element;**
+**Pour ajouter un élément à un tableau, vous utilisez la syntaxe suivante : `$array_name[] = new_element;`**
 `
 
 ```php
@@ -604,6 +604,7 @@ Le paramètre $flags est par défaut SORT_REGULAR. Cela signifie que la fonction
 **Pour combiner plusieurs indicateurs, vous utilisez le | caractère, par exemple, SORT_STRING | SORT_FLAG_CASE. La fonction sort() renvoie vrai en cas de succès ou faux en cas d'échec.**
 
 #### Eemple1:
+
 ```php
 <?php
 	$numbers = [4,5];
@@ -612,6 +613,7 @@ Le paramètre $flags est par défaut SORT_REGULAR. Cela signifie que la fonction
 ```
 
 #### Eemple2:
+
 ```php
 <?php
 	$names = ['Bob', 'John', 'Alice'];
@@ -619,6 +621,7 @@ Le paramètre $flags est par défaut SORT_REGULAR. Cela signifie que la fonction
 
 	print_r($names);
 ```
+
 #### La fonction rsort() est comme la fonction sort() sauf qu'elle trie les éléments d'un tableau par ordre décroissant.
 
 ```php
@@ -628,8 +631,8 @@ Le paramètre $flags est par défaut SORT_REGULAR. Cela signifie que la fonction
 	print_r($ranks);
 ```
 
-
 2. ### uasort La fonction uasort() trie les éléments d'un tableau associatif avec une fonction de comparaison définie par l'utilisateur et maintient l'association d'index.
+
 ```php
 <?php
 	$countries = [
@@ -649,10 +652,13 @@ Le paramètre $flags est par défaut SORT_REGULAR. Cela signifie que la fonction
 		echo "$name has a GDP of {$stat['gdp']} trillion USD with a GDP growth rate of {$stat['gdp_growth']}%" . '<br>';
 	}
 ```
+
 ## TP Manipulation de Tableaux en PHP
+
 Pour ce TP, vous allez effectuer des recherches sur différentes fonctions de manipulation de tableaux en PHP. Pour chaque fonction, vous expliquerez son fonctionnement, puis vous fournirez un programme pour tester vos affirmations.
 
 Il est essentiel de souligner l'importance de la précision dans la rédaction de votre texte, en veillant à ce que les termes techniques soient correctement utilisés et que la syntaxe soit adéquate. Assurez-vous également de fournir des exemples de code clairs et pertinents pour illustrer chaque fonction de manipulation de tableaux en PHP.
+
 - `asort`
 - `usort`
 - `ksort`
@@ -664,35 +670,40 @@ Il est essentiel de souligner l'importance de la précision dans la rédaction d
 ## <span style="color:blue"> LES FONCTIONS
 
 1. ### la syntaxe
+
 ```php
 <?php
 	function function_name(parm1,param2,.....) {
 		statement;
 	}
 ```
+
 2. ### Exemple: Nombre pairs ou impair
+
 ```php
-<?php 
-	function check($number){ 
-		if($number % 2 == 0){ 
-			echo "ce nombre est pair"; 
-		} 
-		else{ 
-			echo "ce nombre est impaire"; 
-		} 
-	} 
-	$number = 39; 
-	check($number) 
-?> 
+<?php
+	function check($number){
+		if($number % 2 == 0){
+			echo "ce nombre est pair";
+		}
+		else{
+			echo "ce nombre est impaire";
+		}
+	}
+	$number = 39;
+	check($number)
+?>
 
 ```
 
 3. ### Portées des variables PHP
-En PHP, les variables peuvent avoir différentes portées, telles que :
+   En PHP, les variables peuvent avoir différentes portées, telles que :
+
 - Portée Locale : Les variables déclarées à l'intérieur d'une fonction ont une portée locale et ne sont accessibles que dans cette fonction.
 - Portée Globale : Les variables déclarées en dehors de toutes fonctions ont une portée globale et peuvent être utilisées partout dans le script.
 - Portée Statique : Les variables statiques conservent leur valeur entre les appels de fonction.
-**Exemple:**
+  **Exemple:**
+
 ```php
 <?php
 	function get_counter() {
@@ -703,6 +714,7 @@ En PHP, les variables peuvent avoir différentes portées, telles que :
 	echo get_counter() .  '<br>'; // 2
 	echo get_counter() .  '<br>'; // 3
 ```
+
 - Portée de Classe : Les variables déclarées à l'intérieur d'une classe ont une portée de classe et peuvent être accessibles via l'instance de la classe.
 
 4. ### Bon à Savoir.
@@ -715,7 +727,8 @@ En PHP, les variables peuvent avoir différentes portées, telles que :
 ![alt text](var_superglobales.png)
 
 6. ### Type Hints
-En PHP, les annotations de type, également connues sous le nom de "Type Hints" ou "Type Declarations", sont des fonctionnalités introduites dans les versions plus récentes du langage pour améliorer la lisibilité du code  en spécifiant les types de données attendus pour les paramètres de fonction et les valeurs de retour.
+   En PHP, les annotations de type, également connues sous le nom de "Type Hints" ou "Type Declarations", sont des fonctionnalités introduites dans les versions plus récentes du langage pour améliorer la lisibilité du code en spécifiant les types de données attendus pour les paramètres de fonction et les valeurs de retour.
+
 ```php
 function additionner(int $a, int $b): int {
     return $a + $b;
@@ -723,7 +736,7 @@ function additionner(int $a, int $b): int {
 ```
 
 7. ### Strict Typing
-En PHP, le "Strict Typing" fait référence à une fonctionnalité introduite dans PHP 7. Il permet de définir explicitement le type des variables utilisées dans un script. Cela signifie que les types des variables doivent être déclarés et respectés lors de l'affectation de valeurs.
+   En PHP, le "Strict Typing" fait référence à une fonctionnalité introduite dans PHP 7. Il permet de définir explicitement le type des variables utilisées dans un script. Cela signifie que les types des variables doivent être déclarés et respectés lors de l'affectation de valeurs.
 
 ```php
 <?php
@@ -734,8 +747,10 @@ En PHP, le "Strict Typing" fait référence à une fonctionnalité introduite da
 	echo additionner(5, 10); // Résultat : 15
 	echo additionner("5", 10); // Erreur fatale en mode Strict Typing
 ```
+
 8. ### Variadic Functions
-En PHP, les "Variadic Functions" (ou fonctions variadiques) sont des fonctions qui acceptent un nombre variable d'arguments. Cela signifie que vous pouvez appeler une fonction avec un nombre différent d'arguments à chaque fois.
+   En PHP, les "Variadic Functions" (ou fonctions variadiques) sont des fonctions qui acceptent un nombre variable d'arguments. Cela signifie que vous pouvez appeler une fonction avec un nombre différent d'arguments à chaque fois.
+
 ```php
 <?php
 	function sum(...$numbers)
@@ -753,16 +768,18 @@ En PHP, les "Variadic Functions" (ou fonctions variadiques) sont des fonctions q
 ```
 
 ### Résumé
-	- Une fonction est un bloc de code nommé qui exécute une tâche spécifique.
-	- Utilisez des fonctions pour créer du code réutilisable.
-	- Utilisez l'instruction return pour renvoyer une valeur d'une fonction.
+
+    - Une fonction est un bloc de code nommé qui exécute une tâche spécifique.
+    - Utilisez des fonctions pour créer du code réutilisable.
+    - Utilisez l'instruction return pour renvoyer une valeur d'une fonction.
 
 ## <span style="color:blue"> FONCTIONS AVANCÉES
 
 1. ### Anonymous Functions
-En PHP, les fonctions anonymes, également appelées "closures", sont des fonctions sans nom qui peuvent être assignées à des variables, passées comme des arguments de fonctions ou retournées par d'autres fonctions.
+   En PHP, les fonctions anonymes, également appelées "closures", sont des fonctions sans nom qui peuvent être assignées à des variables, passées comme des arguments de fonctions ou retournées par d'autres fonctions.
 
 **Exemple 1**
+
 ```php
 $addition = function($a, $b) {
     return $a + $b;
@@ -770,7 +787,9 @@ $addition = function($a, $b) {
 
 echo $addition(2, 3); // Affichera 5
 ```
+
 **Exemple 2**
+
 ```php
 	function creerFonctionMultiplier($facteur) {
 		// Retourne une fonction anonyme qui multiplie un nombre par le facteur donné
@@ -786,10 +805,12 @@ echo $addition(2, 3); // Affichera 5
 	echo $multiplierPar5(10); // Résultat : 50
 
 ```
+
 2. ### Arrow Functions
-En PHP, les "Arrow Functions" sont une fonctionnalité introduite dans la version 7.4 du langage. Ces fonctions fléchées offrent une syntaxe concise pour définir des fonctions anonymes ou des closures de manière plus compacte.
+   En PHP, les "Arrow Functions" sont une fonctionnalité introduite dans la version 7.4 du langage. Ces fonctions fléchées offrent une syntaxe concise pour définir des fonctions anonymes ou des closures de manière plus compacte.
 
 **passer de ça**
+
 ```php
 $addition = function($a, $b) {
     return $a + $b;
